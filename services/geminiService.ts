@@ -1,3 +1,4 @@
+
 import { GoogleGenAI } from "@google/genai";
 import { Platform, Tone } from "../types";
 
@@ -15,19 +16,19 @@ export const optimizePrompt = async (
 
   const modelName = 'gemini-3-flash-preview';
 
-  const systemInstruction = `You are a world-class Prompt Engineer and AI Interaction Specialist. 
-  Your task is to transform the user's raw, basic input into a highly optimized, structured, and effective prompt designed for ${platform}.
+  const systemInstruction = `Anda adalah seorang Insinyur Prompt kelas dunia dan Spesialis Interaksi AI. 
+  Tugas Anda adalah mengubah masukan mentah dan dasar dari pengguna menjadi prompt yang sangat optimal, terstruktur, dan efektif yang dirancang untuk ${platform}.
   
-  The tone of the optimized prompt should be: ${tone}.
+  Nada dari prompt yang dioptimalkan harus: ${tone}.
 
-  Follow these principles based on the target platform:
-  - For **ChatGPT**: Focus on clear context, persona adoption, and output format specification.
-  - For **Gemini**: Emphasize logical reasoning, multi-step instructions, and creative constraints.
-  - For **Claude**: Use XML tags for structure if helpful, focus on safety and clear chain-of-thought requests.
-  - For **General**: Use best practices applicable to all LLMs (Persona, Task, Context, Format).
+  Ikuti prinsip-prinsip ini berdasarkan platform target:
+  - Untuk **ChatGPT**: Fokus pada konteks yang jelas, adopsi persona, dan spesifikasi format output.
+  - Untuk **Gemini**: Tekankan penalaran logis, instruksi multi-langkah, dan batasan kreatif.
+  - Untuk **Claude**: Gunakan tag XML untuk struktur jika membantu, fokus pada keamanan dan permintaan alur berpikir yang jelas.
+  - Untuk **General**: Gunakan praktik terbaik yang berlaku untuk semua LLM (Persona, Tugas, Konteks, Format).
 
-  **Output Format:**
-  Return ONLY the optimized prompt text. Do not include explanations, preambles, or markdown code blocks (unless the prompt itself requires code blocks). The output should be ready to copy and paste directly into the AI chat interface.
+  **Format Output:**
+  Hanya kembalikan teks prompt yang sudah dioptimalkan. Jangan sertakan penjelasan, pembukaan, atau blok kode markdown (kecuali jika prompt itu sendiri memerlukan blok kode). Output harus siap untuk disalin dan ditempel langsung ke antarmuka obrolan AI.
   `;
 
   try {
@@ -41,9 +42,9 @@ export const optimizePrompt = async (
       },
     });
 
-    return response.text || "Failed to generate optimized prompt.";
+    return response.text || "Gagal membuat prompt yang dioptimalkan.";
   } catch (error) {
     console.error("Error optimizing prompt:", error);
-    return "An error occurred while optimizing your prompt. Please check your API key and try again.";
+    return "Terjadi kesalahan saat mengoptimalkan prompt Anda. Silakan periksa kunci API Anda dan coba lagi.";
   }
 };

@@ -19,7 +19,7 @@ const Library: React.FC<LibraryProps> = ({ prompts, onDelete, onToggleFavorite }
   };
 
   const formatDate = (timestamp: number) => {
-    return new Date(timestamp).toLocaleDateString('en-US', {
+    return new Date(timestamp).toLocaleDateString('id-ID', {
       month: 'short',
       day: 'numeric',
       hour: '2-digit',
@@ -33,9 +33,9 @@ const Library: React.FC<LibraryProps> = ({ prompts, onDelete, onToggleFavorite }
         <div className="bg-dark-800 p-6 rounded-full mb-6 ring-1 ring-dark-700">
             <StarIcon className="w-12 h-12 opacity-50" />
         </div>
-        <h2 className="text-xl font-medium text-gray-300 mb-2">No favorites yet</h2>
+        <h2 className="text-xl font-medium text-gray-300 mb-2">Belum ada favorit</h2>
         <p className="text-dark-400 max-w-sm text-center">
-          Tap the star icon on any forged prompt in your History to save it here for quick access.
+          Ketuk ikon bintang pada setiap prompt buatan di Riwayat Anda untuk menyimpannya di sini agar mudah diakses.
         </p>
       </div>
     );
@@ -70,14 +70,14 @@ const Library: React.FC<LibraryProps> = ({ prompts, onDelete, onToggleFavorite }
                   className={`p-1.5 rounded-lg transition-colors ${
                     prompt.isFavorite ? 'text-yellow-400 bg-yellow-400/10' : 'text-dark-500 hover:bg-dark-700 hover:text-gray-300'
                   }`}
-                  title="Toggle Favorite"
+                  title="Beralih Favorit"
                 >
                   <StarIcon className="w-4 h-4" filled={prompt.isFavorite} />
                 </button>
                 <button 
                   onClick={() => onDelete(prompt.id)}
                   className="p-1.5 rounded-lg text-dark-500 hover:bg-red-900/20 hover:text-red-400 transition-colors"
-                  title="Delete"
+                  title="Hapus"
                 >
                   <TrashIcon className="w-4 h-4" />
                 </button>
@@ -87,11 +87,11 @@ const Library: React.FC<LibraryProps> = ({ prompts, onDelete, onToggleFavorite }
             {/* Card Body */}
             <div className="p-4 flex-1 flex flex-col gap-3">
               <div>
-                <p className="text-xs font-semibold text-dark-500 uppercase mb-1">Original</p>
+                <p className="text-xs font-semibold text-dark-500 uppercase mb-1">Asli</p>
                 <p className="text-sm text-gray-400 line-clamp-2 leading-relaxed">{prompt.originalText}</p>
               </div>
               <div className="mt-2 pt-3 border-t border-dark-700/50 flex-1">
-                <p className="text-xs font-semibold text-brand-500 uppercase mb-1">Optimized</p>
+                <p className="text-xs font-semibold text-brand-500 uppercase mb-1">Optimal</p>
                 <p className="text-sm text-gray-200 line-clamp-4 leading-relaxed whitespace-pre-line">{prompt.optimizedText}</p>
               </div>
             </div>
@@ -111,11 +111,11 @@ const Library: React.FC<LibraryProps> = ({ prompts, onDelete, onToggleFavorite }
               >
                 {copiedId === prompt.id ? (
                     <>
-                        <CheckIcon className="w-3 h-3" /> Copied
+                        <CheckIcon className="w-3 h-3" /> Tersalin
                     </>
                 ) : (
                     <>
-                        <CopyIcon className="w-3 h-3" /> Copy Result
+                        <CopyIcon className="w-3 h-3" /> Salin Hasil
                     </>
                 )}
               </button>

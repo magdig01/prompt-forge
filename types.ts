@@ -1,6 +1,7 @@
+
 export type Platform = 'Gemini' | 'ChatGPT' | 'Claude' | 'General';
 
-export type Tone = 'Professional' | 'Creative' | 'Academic' | 'Concise' | 'Step-by-Step';
+export type Tone = 'Profesional' | 'Kreatif' | 'Akademis' | 'Ringkas' | 'Langkah-demi-Langkah';
 
 export interface PromptData {
   id: string;

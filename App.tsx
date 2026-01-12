@@ -48,6 +48,13 @@ function App() {
   return (
     <div className="min-h-screen bg-dark-900 text-gray-100 font-sans selection:bg-brand-500/30 selection:text-brand-200">
       
+      {/* Top Banner */}
+      <div className="w-full bg-dark-950/50 border-b border-dark-800/50 py-1.5 px-4 text-center">
+        <span className="text-[10px] md:text-xs font-medium text-dark-500 uppercase tracking-widest">
+          2025 By Magelang Digital
+        </span>
+      </div>
+
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-dark-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,7 +81,7 @@ function App() {
                 }`}
               >
                 <ZapIcon className="w-4 h-4" />
-                <span className="hidden md:inline">Optimizer</span>
+                <span className="hidden md:inline">Pengoptimal</span>
               </button>
               
               <button
@@ -86,7 +93,7 @@ function App() {
                 }`}
               >
                 <LibraryIcon className="w-4 h-4" />
-                <span className="hidden md:inline">Favorites</span>
+                <span className="hidden md:inline">Favorit</span>
                 {favorites.length > 0 && (
                    <span className="ml-1 text-[10px] bg-brand-500 text-white px-1.5 py-0.5 rounded-full leading-none">{favorites.length}</span>
                 )}
@@ -101,7 +108,7 @@ function App() {
                 }`}
               >
                 <HistoryIcon className="w-4 h-4" />
-                <span className="hidden md:inline">History</span>
+                <span className="hidden md:inline">Riwayat</span>
                 {history.length > 0 && (
                    <span className="ml-1 text-[10px] bg-dark-900 px-1.5 py-0.5 rounded-full text-dark-400 border border-dark-700">{history.length}</span>
                 )}
@@ -117,10 +124,10 @@ function App() {
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="text-center mb-8 px-4">
                <h1 className="text-3xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
-                Turn thoughts into power prompts.
+                Ubah ide menjadi prompt andalan.
                </h1>
                <p className="text-dark-400 max-w-xl mx-auto text-sm md:text-base">
-                Enhance your AI interactions. Instant prompt engineering optimized for Gemini, ChatGPT, and Claude.
+                Tingkatkan interaksi AI Anda. Rekayasa prompt instan yang dioptimalkan untuk Gemini, ChatGPT, dan Claude.
                </p>
             </div>
             <Optimizer onSavePrompt={handleSavePrompt} />
@@ -132,9 +139,9 @@ function App() {
              <div className="max-w-7xl mx-auto px-6 mb-6">
                <h2 className="text-2xl font-bold text-gray-100 flex items-center gap-2">
                  <LibraryIcon className="w-6 h-6 text-brand-400" />
-                 Prompt Library
+                 Pustaka Prompt
                 </h2>
-               <p className="text-dark-400 text-sm mt-1">Your curated collection of favorite power-prompts.</p>
+               <p className="text-dark-400 text-sm mt-1">Koleksi prompt andalan favorit pilihan Anda.</p>
              </div>
              <Library 
               prompts={favorites} 
@@ -149,9 +156,9 @@ function App() {
              <div className="max-w-7xl mx-auto px-6 mb-6">
                <h2 className="text-2xl font-bold text-gray-100 flex items-center gap-2">
                  <HistoryIcon className="w-6 h-6 text-brand-400" />
-                 Interaction History
+                 Riwayat Interaksi
                </h2>
-               <p className="text-dark-400 text-sm mt-1">A complete log of every prompt you've ever forged.</p>
+               <p className="text-dark-400 text-sm mt-1">Catatan lengkap setiap prompt yang pernah Anda buat.</p>
              </div>
              <History 
               prompts={history} 
@@ -163,11 +170,14 @@ function App() {
       </main>
 
       {/* Footer / Status Bar */}
-      <footer className="fixed bottom-0 w-full bg-dark-900/90 backdrop-blur border-t border-dark-800 py-2 px-6 text-xs text-dark-500 flex justify-between items-center z-40">
-        <div>
-           Powered by <span className="font-semibold text-brand-500">Gemini 3 Flash</span>
+      <footer className="fixed bottom-0 w-full bg-dark-900/90 backdrop-blur border-t border-dark-800 py-2 px-6 text-[10px] md:text-xs text-dark-500 flex justify-between items-center z-40">
+        <div className="flex-1">
+           Didukung oleh <span className="font-semibold text-brand-500">Gemini 3 Flash</span>
         </div>
-        <div className="flex gap-4">
+        <div className="flex-1 text-center font-medium text-dark-400 uppercase tracking-widest">
+           2025 By Magelang Digital
+        </div>
+        <div className="flex-1 flex justify-end gap-4">
            <span>v1.1.0</span>
         </div>
       </footer>

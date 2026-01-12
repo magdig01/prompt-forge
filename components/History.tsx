@@ -19,7 +19,7 @@ const History: React.FC<HistoryProps> = ({ prompts, onDelete, onToggleFavorite }
   };
 
   const formatDate = (timestamp: number) => {
-    return new Date(timestamp).toLocaleString('en-US', {
+    return new Date(timestamp).toLocaleString('id-ID', {
       month: 'short',
       day: 'numeric',
       hour: '2-digit',
@@ -33,9 +33,9 @@ const History: React.FC<HistoryProps> = ({ prompts, onDelete, onToggleFavorite }
         <div className="bg-dark-800 p-6 rounded-full mb-6 ring-1 ring-dark-700">
             <HistoryIcon className="w-12 h-12 opacity-50" />
         </div>
-        <h2 className="text-xl font-medium text-gray-300 mb-2">No history yet</h2>
+        <h2 className="text-xl font-medium text-gray-300 mb-2">Belum ada riwayat</h2>
         <p className="text-dark-400 max-w-sm text-center">
-          Every prompt you transform will appear here. Start forging to see your history grow.
+          Setiap prompt yang Anda ubah akan muncul di sini. Mulai membuat untuk melihat riwayat Anda bertambah.
         </p>
       </div>
     );
@@ -88,13 +88,13 @@ const History: React.FC<HistoryProps> = ({ prompts, onDelete, onToggleFavorite }
               <div className="flex-1 min-w-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="text-[10px] font-bold text-dark-500 uppercase tracking-widest mb-1.5">Original Idea</h4>
+                    <h4 className="text-[10px] font-bold text-dark-500 uppercase tracking-widest mb-1.5">Ide Asli</h4>
                     <p className="text-sm text-gray-400 line-clamp-3 italic leading-relaxed">
                       "{prompt.originalText}"
                     </p>
                   </div>
                   <div className="relative">
-                    <h4 className="text-[10px] font-bold text-brand-500 uppercase tracking-widest mb-1.5">Forged Prompt</h4>
+                    <h4 className="text-[10px] font-bold text-brand-500 uppercase tracking-widest mb-1.5">Prompt Buatan</h4>
                     <div className="relative group/text">
                       <p className="text-sm text-gray-200 line-clamp-3 leading-relaxed pr-8">
                         {prompt.optimizedText}
@@ -106,7 +106,7 @@ const History: React.FC<HistoryProps> = ({ prompts, onDelete, onToggleFavorite }
                             ? 'bg-green-500/20 text-green-400' 
                             : 'bg-dark-700/50 text-dark-400 opacity-0 group-hover/text:opacity-100 hover:text-white hover:bg-brand-600'
                         }`}
-                        title="Copy"
+                        title="Salin"
                       >
                         {copiedId === prompt.id ? <CheckIcon className="w-3.5 h-3.5" /> : <CopyIcon className="w-3.5 h-3.5" />}
                       </button>
